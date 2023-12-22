@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc067wejmdec0"]
+
+[ext_resource type="Theme" uid="uid://bcp6u4g4jvnpe" path="res://common/themes/primary_button_theme.tres" id="1_62gii"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 181.0
+offset_bottom = 96.0
+text = "menu principal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 512.0
+offset_right = 1088.0
+offset_bottom = 576.0
+theme = ExtResource("1_62gii")
+theme_override_font_sizes/font_size = 36
+text = "Play"

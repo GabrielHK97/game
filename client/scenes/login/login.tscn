@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ylc7w1usvl2"]
+
+[ext_resource type="Theme" uid="uid://bum3yyacy82m0" path="res://common/themes/line_edit_theme.tres" id="1_hab6l"]
+[ext_resource type="Script" path="res://client/scenes/login/login.gd" id="1_owyvq"]
+[ext_resource type="Theme" uid="uid://bcp6u4g4jvnpe" path="res://common/themes/primary_button_theme.tres" id="2_mnw1b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owyvq")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Username" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 288.0
+theme = ExtResource("1_hab6l")
+placeholder_text = "username"
+
+[node name="Password" type="LineEdit" parent="Background"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 304.0
+offset_right = 704.0
+offset_bottom = 336.0
+theme = ExtResource("1_hab6l")
+placeholder_text = "password"
+
+[node name="CheckBox" type="CheckBox" parent="Background"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 344.0
+offset_right = 704.0
+offset_bottom = 376.0
+text = "remember my credentials"
+
+[node name="Login" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 424.0
+theme = ExtResource("2_mnw1b")
+text = "Login"
+
+[node name="Status" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 440.0
+offset_right = 704.0
+offset_bottom = 464.0

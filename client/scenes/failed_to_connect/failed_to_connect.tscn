@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://sy147lglgla3"]
+
+[ext_resource type="Script" path="res://client/scenes/failed_to_connect/failed_to_connect.gd" id="1_lhafe"]
+[ext_resource type="Theme" uid="uid://qgipnuc0usgu" path="res://common/themes/success_button_theme.tres" id="2_4tklv"]
+[ext_resource type="Theme" uid="uid://cincpeiakuyit" path="res://common/themes/error_button_theme.tres" id="3_3mkaq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhafe")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 304.0
+offset_right = 680.0
+offset_bottom = 336.0
+text = "Failed to connect to server."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reconnect" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 336.0
+offset_right = 568.0
+offset_bottom = 376.0
+theme = ExtResource("2_4tklv")
+text = "Reconnect"
+
+[node name="Quit" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 336.0
+offset_right = 744.0
+offset_bottom = 376.0
+theme = ExtResource("3_3mkaq")
+text = "Quit"
