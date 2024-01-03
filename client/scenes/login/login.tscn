@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6ylc7w1usvl2"]
 
-[ext_resource type="Theme" uid="uid://bum3yyacy82m0" path="res://common/themes/line_edit_theme.tres" id="1_hab6l"]
+[ext_resource type="Theme" uid="uid://bum3yyacy82m0" path="res://client/themes/line_edit_theme.tres" id="1_hab6l"]
 [ext_resource type="Script" path="res://client/scenes/login/login.gd" id="1_owyvq"]
-[ext_resource type="Theme" uid="uid://bcp6u4g4jvnpe" path="res://common/themes/primary_button_theme.tres" id="2_mnw1b"]
+[ext_resource type="Theme" uid="uid://bcp6u4g4jvnpe" path="res://client/themes/primary_button_theme.tres" id="2_mnw1b"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,6 +36,7 @@ offset_right = 704.0
 offset_bottom = 336.0
 theme = ExtResource("1_hab6l")
 placeholder_text = "password"
+secret = true
 
 [node name="CheckBox" type="CheckBox" parent="Background"]
 layout_mode = 0
@@ -60,3 +61,5 @@ offset_left = 448.0
 offset_top = 440.0
 offset_right = 704.0
 offset_bottom = 464.0
+horizontal_alignment = 1
+vertical_alignment = 1

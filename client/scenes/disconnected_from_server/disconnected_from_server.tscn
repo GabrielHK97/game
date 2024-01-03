@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://5iti5fx5hfwh"]
 
-[ext_resource type="Theme" uid="uid://qgipnuc0usgu" path="res://common/themes/success_button_theme.tres" id="1_4m4xn"]
+[ext_resource type="Theme" uid="uid://qgipnuc0usgu" path="res://client/themes/success_button_theme.tres" id="1_4m4xn"]
 [ext_resource type="Script" path="res://client/scenes/disconnected_from_server/disconnected_from_server.gd" id="1_oi36f"]
-[ext_resource type="Theme" uid="uid://cincpeiakuyit" path="res://common/themes/error_button_theme.tres" id="2_jkin4"]
+[ext_resource type="Theme" uid="uid://cincpeiakuyit" path="res://client/themes/error_button_theme.tres" id="2_jkin4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
