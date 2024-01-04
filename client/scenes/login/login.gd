@@ -27,6 +27,7 @@ func _on_login():
 func _on_login_request(result, responseCode, headers, body):
 	if (responseCode == 200):
 		ClientGlobals.token = JSON.parse_string(body.get_string_from_utf8()).data.token
+		ClientGlobals.username = $Background/Username.text
 		$Background/Status.text = "Logged in!"
 		get_tree().change_scene_to_file("res://client/scenes/main_menu/main_menu.tscn")
 	else:
