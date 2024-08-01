@@ -2,21 +2,29 @@ import { useNavigate } from "react-router-dom";
 import { useAuthentication } from "../../hooks/useAuthentication.hook";
 import { useEffect } from "react";
 import { useSocket } from "../../hooks/useSocket.hook";
+import { useApplicationContext } from "../../providers/ApplicationProvider";
+import { getGameBackendAPI } from "../../utils/api/game-backend.api";
 
 function Application() {
+  const { socket, setAuthenticated } = useApplicationContext();
   const { authenticated } = useAuthentication();
   const navigate = useNavigate();
 
   useSocket();
 
   useEffect(() => {
-    console.log(authenticated);
-    // if (authenticated === false) {
-    //   navigate("/");
-    // }
+    if (authenticated === false) {
+      navigate("/");
+    }
   }, [authenticated]);
 
-  return <></>;
+  window.addEventListener("beforeunload", () => {
+    if (socket) socket.disconnect();
+    getGameBackendAPI().get("/auth/logout", { withCredentials: true });
+    setAuthenticated(false);
+  });
+
+  return <div></div>;
 }
 
 export default Application;

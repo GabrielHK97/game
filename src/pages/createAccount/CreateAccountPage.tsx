@@ -44,7 +44,7 @@ function CreateAccountPage() {
         birthDate: new Date(birthDate!),
       };
       getGameBackendAPI()
-        .post("/account", createAccount, {
+        .post("/account/create", createAccount, {
           withCredentials: true,
         })
         .then(() => {

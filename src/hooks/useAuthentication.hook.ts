@@ -7,18 +7,29 @@ interface IAuthentication {
 }
 
 export function useAuthentication(): IAuthentication {
-  const { authenticated, setAuthenticated } = useApplicationContext();
-  async function auth(): Promise<void> {
+  const { authenticated, setAuthenticated, setAccount } = useApplicationContext();
+
+  async function authenticateAndGetAccount() {
+    await authenticate();
+    if (authenticated) {
+      const response = await getGameBackendAPI().get("/account", {
+        withCredentials: true,
+      }).then((res) => {return res}).catch((e) => {return {data: {}}});
+      setAccount(response.data.data);
+    }
+  }
+
+  async function authenticate(): Promise<void> {
     const response = await getGameBackendAPI().get("/auth", {
       withCredentials: true,
     }).then(() => {return true}).catch(() => {return false});
-    console.log(response);
     setAuthenticated(response);
   }
 
+
   useEffect(() => {
-    auth();
-    const interval = setInterval(auth, 1000);
+    authenticateAndGetAccount();
+    const interval = setInterval(authenticate, 1000);
     return () => {
       clearInterval(interval);
     };
