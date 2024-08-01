@@ -18,12 +18,6 @@ function Application() {
     }
   }, [authenticated]);
 
-  window.addEventListener("beforeunload", () => {
-    if (socket) socket.disconnect();
-    getGameBackendAPI().get("/auth/logout", { withCredentials: true });
-    setAuthenticated(false);
-  });
-
   return <div></div>;
 }
 

@@ -19,8 +19,7 @@ export function useSocket(): void {
 
   useEffect(() => {
     if (socket) {
-      socket.on("disconnect", (res) => {
-        console.log(res);
+      socket.on("disconnect", () => {
         getGameBackendAPI().get("/auth/logout", { withCredentials: true });
         setAuthenticated(false);
       });
