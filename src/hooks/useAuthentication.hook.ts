@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { getGameBackendAPI } from "../utils/api/game-backend.api";
-import { useApplicationContext } from "../providers/ApplicationProvider";
+import { useApplicationContext } from "../components/application/application.context";
 
 interface IAuthentication {
   authenticated: boolean;
@@ -23,7 +23,6 @@ export function useAuthentication(): IAuthentication {
     const response = await getGameBackendAPI().get("/auth", {
       withCredentials: true,
     }).then(() => {return true}).catch(() => {return false});
-    console.log(response);
     setAuthenticated(response);
   }
 

@@ -14,7 +14,7 @@ function LoginPage() {
   const [password, setPassword] = useState<string | undefined>(undefined);
   const [message, setMessage] = useState<string | undefined>(undefined);
   const navigate = useNavigate();
-  const {authenticated} = useAuthentication();
+  const { authenticated } = useAuthentication();
 
   function canLogin(): boolean {
     return username && password ? true : false;
@@ -34,12 +34,7 @@ function LoginPage() {
           navigate("/home");
         })
         .catch((e) => {
-          console.log(e);
-          if (e.response) {
-            setMessage(e.response.data.message);
-          } else {
-            setMessage(e.message);
-          }
+          setMessage(e.message);
         });
     } else {
       setMessage("Login failed!");

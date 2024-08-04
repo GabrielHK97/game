@@ -1,5 +1,5 @@
 import UserSVG from "../../assets/svg/user.svg";
-import { useApplicationContext } from "../../providers/ApplicationProvider";
+import { useApplicationContext } from "../application/application.context";
 import { getGameBackendAPI } from "../../utils/api/game-backend.api";
 
 function Navbar() {

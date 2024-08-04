@@ -6,7 +6,7 @@ import LoginPage from "./pages/login/LoginPage";
 import CreateAccountPage from "./pages/createAccount/CreateAccountPage";
 import HomePage from "./pages/home/HomePage";
 import Application from "./components/application/Application";
-import ApplicationProvider from "./providers/ApplicationProvider";
+import ApplicationProvider from "./components/application/application.context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <ApplicationProvider>
       <BrowserRouter>
-      <Application/>
+        <Application />
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />

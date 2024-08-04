@@ -51,11 +51,7 @@ function CreateAccountPage() {
           setAccountCreated(true);
         })
         .catch((e) => {
-          if(e.response) {
-            setMessage(e.response.data.message);
-          } else {
-            setMessage(e.message);
-          }
+          setMessage(e.message);
         });
     } else {
       setMessage("Some field is empty");

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthentication } from "../../hooks/useAuthentication.hook";
-import Lobby from "../../components/lobby/Lobby";
 import Navbar from "../../components/navbar/Navbar";
 import SplashScreen from "../../assets/splashscreen.jpeg";
+import Lobby from "../../components/lobby/Lobby";
 
 function HomePage() {
   const { authenticated } = useAuthentication();
@@ -24,7 +24,7 @@ function HomePage() {
             <div className="min-h-0 w-full flex-1">
               <img src={SplashScreen} className="w-full h-full" />
             </div>
-            <Lobby className="w-1/5"/>
+              <Lobby className="w-1/5" />
           </div>
         </div>
       </div>

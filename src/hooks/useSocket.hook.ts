@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 import { useEffect } from "react";
 import { getGameBackendAPI } from "../utils/api/game-backend.api";
-import { useApplicationContext } from "../providers/ApplicationProvider";
+import { useApplicationContext } from "../components/application/application.context";
 
 export function useSocket(): void {
   const { authenticated, setAuthenticated, socket, setSocket } =
@@ -14,6 +14,7 @@ export function useSocket(): void {
           withCredentials: true,
         })
       );
+      console.log('socket on');
     }
   }, [authenticated]);
 
